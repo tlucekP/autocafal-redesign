@@ -1,0 +1,16 @@
+﻿---
+interface Props {
+  businessName: string;
+  address: string;
+}
+
+const { businessName, address } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-slate-950 px-4 py-10 text-slate-200 sm:px-6 lg:px-8">
+  <div class="container-custom flex flex-col justify-between gap-2 text-sm md:flex-row md:items-center">
+    <p>&copy; {year} {businessName}</p>
+    <p>{address}</p>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+﻿[
+  {
+    "section": "Pneuservis",
+    "items": [
+      { "name": "Přezutí kola + vyvážení", "price": "350 Kč" },
+      { "name": "Přezutí celého vozu", "price": "1400 Kč" },
+      { "name": "Kompletace + vyvážení", "price": "500 Kč" },
+      { "name": "Ventilek gumový", "price": "35 Kč" }
+    ]
+  },
+  {
+    "section": "Diagnostika",
+    "items": [
+      { "name": "Osobní automobil", "price": "500 Kč" },
+      { "name": "Nákladní automobil", "price": "1000 Kč" }
+    ]
+  },
+  {
+    "section": "Servisní práce",
+    "items": [
+      { "name": "Výměna oleje + filtru", "price": "300 Kč" },
+      { "name": "Výměna kabinového filtru", "price": "150 Kč" },
+      { "name": "Doplnění klimatizace", "price": "700 Kč" },
+      { "name": "Čištění ozonem", "price": "500 Kč" },
+      { "name": "Příprava STK a emise", "price": "1000 Kč" }
+    ]
+  }
+]

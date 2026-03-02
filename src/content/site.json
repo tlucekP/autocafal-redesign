@@ -1,0 +1,30 @@
+﻿{
+  "businessName": "Autoservis Cafal",
+  "phone": "+420 604 378 071",
+  "phoneHref": "tel:+420604378071",
+  "email": "autocafal@seznam.cz",
+  "emailHref": "mailto:autocafal@seznam.cz",
+  "address": "Okaly 1104, 735 53 Dolní Lutyně",
+  "hours": "Po–Pá 8:00–17:00 (pauza 12:00–13:00), So/Ne zavřeno",
+  "maps": {
+    "googleSearchUrl": "https://www.google.com/maps/search/?api=1&query=Okaly+1104,+735+53+Doln%C3%AD+Lutyn%C4%9B",
+    "mapyczSearchUrl": "https://mapy.cz/zakladni?q=Okaly%201104%2C%20735%2053%20Doln%C3%AD%20Lutyn%C4%9B"
+  },
+  "seo": {
+    "title": "Autoservis a motoservis Dolní Lutyně | Autoservis Cafal",
+    "description": "Autoservis a motoservis v Dolní Lutyni. Opravy, diagnostika, příprava na STK, odtah. Zavolejte +420 604 378 071."
+  },
+  "hero": {
+    "badge": "Rodinná firma od roku 1994",
+    "headline": "Autoservis a motoservis v Dolní Lutyni",
+    "subheadline": "Víme jak na to"
+  },
+  "about": [
+    "Vítáme Vás na našich stránkách.",
+    "Jsme rodinná firma zabývající se opravami osobních automobilů a motocyklů již od roku 1994.",
+    "Nabízíme servisní prohlídky a opravy vozidel všech značek, dále pneuservis.",
+    "Provádíme přípravu a zajištění STK a emisí. Samozřejmostí je výměna olejů a filtrů.",
+    "Poskytujeme také sezónní údržbu klimatizace včetně čištění ozonem.",
+    "V případě zájmu Vám můžeme zprostředkovat i odtah nepojízdného vozidla."
+  ]
+}

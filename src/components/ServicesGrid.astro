@@ -1,0 +1,29 @@
+﻿---
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  items: ServiceItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section id="sluzby" class="section-padding border-t border-slate-200/80 bg-white/70">
+  <div class="container-custom">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-950">Služby</h2>
+      <p class="mt-3 text-slate-600">Nabídka služeb z původního webu přehledně v kartách.</p>
+    </div>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((service) => (
+        <article class="card p-6">
+          <h3 class="text-lg font-semibold text-slate-900">{service.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

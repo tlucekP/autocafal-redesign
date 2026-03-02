@@ -1,0 +1,16 @@
+﻿---
+interface Props {
+  phoneHref: string;
+  mapUrl: string;
+}
+
+const { phoneHref, mapUrl } = Astro.props;
+---
+
+<div class="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white p-3 md:hidden">
+  <div class="mx-auto grid max-w-6xl grid-cols-3 gap-2">
+    <a href={phoneHref} class="btn-secondary px-3 py-2 text-center text-xs">Zavolat</a>
+    <a href={mapUrl} target="_blank" rel="noreferrer" class="btn-secondary px-3 py-2 text-center text-xs">Navigovat</a>
+    <a href="#kontakt" class="btn-primary px-3 py-2 text-center text-xs">Poptávka</a>
+  </div>
+</div>

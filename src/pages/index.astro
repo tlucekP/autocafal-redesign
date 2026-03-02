@@ -1,17 +1,65 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import Pricing from '../components/Pricing.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import MobileCtaBar from '../components/MobileCtaBar.astro';
+
+import site from '../content/site.json';
+import services from '../content/services.json';
+import pricing from '../content/pricing.json';
+import gallery from '../content/gallery.json';
+
+const navItems = [
+  { href: '#hero', label: 'Úvod' },
+  { href: '#sluzby', label: 'Služby' },
+  { href: '#cenik', label: 'Ceník' },
+  { href: '#galerie', label: 'Galerie' },
+  { href: '#kontakt', label: 'Kontakt' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AutoRepair',
+  name: site.businessName,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Okaly 1104',
+    postalCode: '735 53',
+    addressLocality: 'Dolní Lutyně',
+    addressCountry: 'CZ',
+  },
+  telephone: site.phone,
+  email: site.email,
+  openingHours: 'Mo-Fr 08:00-17:00',
+  url: 'https://autocafal.cz',
+  sameAs: [site.maps.googleSearchUrl, site.maps.mapyczSearchUrl],
+};
 ---
 
----
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={site.seo.title} description={site.seo.description} schema={schema}>
+  <Header businessName={site.businessName} phoneHref={site.phoneHref} phone={site.phone} navItems={navItems} />
+  <main>
+    <Hero badge={site.hero.badge} headline={site.hero.headline} subheadline={site.hero.subheadline} about={site.about} phoneHref={site.phoneHref} mapsUrl={site.maps.googleSearchUrl} />
+    <ServicesGrid items={services} />
+    <Pricing sections={pricing} />
+    <GalleryGrid items={gallery} />
+    <Contact
+      phone={site.phone}
+      phoneHref={site.phoneHref}
+      email={site.email}
+      emailHref={site.emailHref}
+      address={site.address}
+      hours={site.hours}
+      mapGoogle={site.maps.googleSearchUrl}
+      mapMapycz={site.maps.mapyczSearchUrl}
+      formEndpoint={import.meta.env.PUBLIC_FORM_ENDPOINT}
+    />
+  </main>
+  <Footer businessName={site.businessName} address={site.address} />
+  <MobileCtaBar phoneHref={site.phoneHref} mapUrl={site.maps.googleSearchUrl} />
+</BaseLayout>
