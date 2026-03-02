@@ -13,9 +13,10 @@ const { items } = Astro.props;
 
 <section id="sluzby" class="section-padding border-t border-slate-200/80 bg-white/70">
   <div class="container-custom">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-bold tracking-tight text-slate-950">Služby</h2>
-      <p class="mt-3 text-slate-600">Nabídka služeb z původního webu přehledně v kartách.</p>
+    <div class="mx-auto max-w-6xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-950">Proč právě my?</h2>
+      <div class="mx-auto mt-4 h-1 w-16 bg-yellow-400"></div>
+      <p class="mt-3 text-slate-600">Nabízíme Vám servis automobilů a motocyklů všech továrních značek a typů. V případě potřeby Váš vůz vyzvedneme u Vás a po opravě ho přivezeme k Vám domů či do firmy. Chcete si pořídit ojetý automobil nebo motocykl? Nabízíme odbornou poradenskou službu při koupi. Ručíme za kvalitní a rychlé provedení oprav. Věříme, že naše spolupráce založená na vzájemné důvěře a partnerství bude tím pravým klíčem k oboustrané spokojenosti.</p>
     </div>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((service) => (
@@ -24,6 +25,58 @@ const { items } = Astro.props;
           <p class="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
         </article>
       ))}
+    </div>
+    <div class="mt-12 rounded-3xl bg-[#2f2f31] p-6 sm:p-10">
+      <div class="text-center">
+        <h3 class="text-4xl font-bold tracking-tight text-white">Služby</h3>
+        <div class="mx-auto mt-4 h-1 w-16 bg-yellow-400"></div>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_1.05fr] lg:items-start">
+        <article>
+          <h4 class="text-3xl font-bold uppercase tracking-tight text-white">SERVIS AUTOMOBILŮ</h4>
+          <ul class="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-white marker:text-yellow-400">
+            <li>Servis osobních, užitkových a terénních vozidel</li>
+            <li>Veškeré mechanické práce</li>
+            <li>Diagnostika vozů</li>
+            <li>Opravy startérů a alternátorů</li>
+            <li>Montáž tažných zařízení</li>
+            <li>Montáž Park asistent</li>
+            <li>Montáž autorádií</li>
+            <li>Ochranné nástřiky spodku vozu + dutin</li>
+            <li>Čištění interiéru vozů</li>
+            <li>Prodej ND</li>
+            <li>Lakýrnické práce</li>
+            <li>Drobné karosářské práce</li>
+            <li>Příprava a provdní ME + TK</li>
+            <li>Výměna rozvodů a motorů</li>
+          </ul>
+        </article>
+        <img src="/images/sluzby1.jpg" alt="Servis automobilů" class="h-full w-full rounded-2xl object-cover" loading="lazy" />
+      </div>
+
+      <div class="mt-6 grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+        <img src="/images/sluzby2.jpg" alt="Servis motocyklů" class="h-full w-full rounded-2xl object-cover" loading="lazy" />
+        <article>
+          <h4 class="text-3xl font-bold uppercase tracking-tight text-white">SERVIS MOTOCYKLŮ</h4>
+          <ul class="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-white marker:text-yellow-400">
+            <li>Kompletní servis motocyklů (krom typu Jawa, Čza, čínské moto)</li>
+            <li>Odvoz nepojízdného motocyklu na servis</li>
+            <li>Generální opravy motorů</li>
+            <li>Seřízení ventilů, karburátorů, podvozků</li>
+            <li>Opravy elektroinstalací</li>
+            <li>Montáž a úprava laděných výfuků</li>
+            <li>Výměny provozních náplní</li>
+            <li>Repase brzdového systému</li>
+            <li>Výměny řetězových sad</li>
+            <li>Výměna ložisek řízení</li>
+            <li>Kontrola a údržba akumulátorů</li>
+            <li>Výměna rozvodového řetězu</li>
+            <li>Lakýrnické práce</li>
+            <li>Příprava na STK</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </div>
 </section>

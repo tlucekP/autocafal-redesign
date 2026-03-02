@@ -12,6 +12,8 @@ interface Props {
 }
 
 const { phone, phoneHref, email, emailHref, address, hours, mapGoogle, mapMapycz, formEndpoint } = Astro.props;
+const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+const mapDirectionUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
 ---
 
 <section id="kontakt" class="section-padding border-t border-slate-200/80">
@@ -36,22 +38,63 @@ const { phone, phoneHref, email, emailHref, address, hours, mapGoogle, mapMapycz
           <dd class="text-slate-700">{hours}</dd>
         </div>
       </dl>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href={mapGoogle} target="_blank" rel="noreferrer" class="btn-secondary">Google Maps</a>
-        <a href={mapMapycz} target="_blank" rel="noreferrer" class="btn-secondary">Mapy.cz</a>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <div class="relative h-64 w-full">
+          <iframe
+            title="Mapa Autoservis Cafal"
+            src={mapEmbedUrl}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="h-full w-full border-0"
+          ></iframe>
+          <div class="absolute left-3 top-3 rounded-xl bg-white/95 px-3 py-2 shadow-sm">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-xl font-semibold text-slate-900">1104</p>
+                <p class="text-sm leading-tight text-slate-700">{address}, Česko</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href={mapGoogle} target="_blank" rel="noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-lg font-semibold text-slate-700 hover:bg-slate-100" aria-label="Otevřít v Google Maps">↗</a>
+                <a href={mapDirectionUrl} target="_blank" rel="noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-lg font-semibold text-slate-700 hover:bg-slate-100" aria-label="Navigovat">➤</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="card p-6 sm:p-8">
       <h3 class="text-xl font-bold text-slate-950">Poptávkový formulář</h3>
       <form action={formEndpoint} method="post" class="mt-5 space-y-4" data-contact-form>
-        <div>
-          <label for="name" class="mb-1 block text-sm font-medium text-slate-800">Jméno</label>
-          <input id="name" name="name" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="name" class="mb-1 block text-sm font-medium text-slate-800">Jméno</label>
+            <input id="name" name="name" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
+          <div>
+            <label for="surname" class="mb-1 block text-sm font-medium text-slate-800">Příjmení</label>
+            <input id="surname" name="surname" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
         </div>
-        <div>
-          <label for="contact" class="mb-1 block text-sm font-medium text-slate-800">Telefon nebo e-mail</label>
-          <input id="contact" name="contact" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="phone" class="mb-1 block text-sm font-medium text-slate-800">Telefon</label>
+            <input id="phone" name="phone" type="tel" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
+          <div>
+            <label for="email" class="mb-1 block text-sm font-medium text-slate-800">E-mail</label>
+            <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="vehicleBrand" class="mb-1 block text-sm font-medium text-slate-800">Značka vozidla</label>
+            <input id="vehicleBrand" name="vehicleBrand" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
+          <div>
+            <label for="vin" class="mb-1 block text-sm font-medium text-slate-800">VIN kód</label>
+            <input id="vin" name="vin" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm" />
+          </div>
         </div>
         <div>
           <label for="message" class="mb-1 block text-sm font-medium text-slate-800">Zpráva</label>

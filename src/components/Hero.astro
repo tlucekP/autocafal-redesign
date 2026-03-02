@@ -39,6 +39,7 @@ const { badge, headline, subheadline, about, phoneHref, mapsUrl } = Astro.props;
     </div>
     <div class="card p-6 sm:p-8">
       <h2 class="text-xl font-bold text-slate-950">O nás</h2>
+      <div class="mt-3 h-1 w-16 bg-yellow-400"></div>
       <div class="mt-4 space-y-3 text-sm leading-relaxed text-slate-700">
         {about.map((paragraph) => (
           <p>{paragraph}</p>
