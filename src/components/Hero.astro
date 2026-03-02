@@ -11,10 +11,19 @@ interface Props {
 const { badge, headline, subheadline, about, phoneHref, mapsUrl } = Astro.props;
 ---
 
-<section id="hero" class="section-padding">
-  <div class="container-custom grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-    <div>
-      <p class="mb-5 inline-flex rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">{badge}</p>
+<section id="hero" class="px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-20 lg:pt-10">
+  <div class="container-custom grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+    <div class="flex flex-col items-start">
+      <div class="mb-4 w-full max-w-[26rem] sm:max-w-[30rem]">
+        <img
+          src="/images/logo.png"
+          alt="Logo Autoservis Cafal"
+          class="block h-auto w-full object-contain object-left"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <p class="mb-4 inline-flex rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">{badge}</p>
       <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl">{headline}</h1>
       <p class="mt-4 text-lg font-medium text-[color:var(--accent)]">{subheadline}</p>
       <div class="mt-8 flex flex-wrap gap-3">
