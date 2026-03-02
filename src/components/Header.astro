@@ -15,14 +15,17 @@ const { businessName, phoneHref, phone, navItems } = Astro.props;
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-  <div class="container-custom flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-    <a href="#hero" class="text-sm font-bold tracking-tight text-slate-900">{businessName}</a>
+  <div class="container-custom flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8">
+    <a href="#hero" class="inline-flex items-center gap-3 text-[17px] font-bold tracking-tight text-slate-900">
+      <img src="/images/logo2.png" alt="Logo Autoservis Cafal" class="h-24 w-auto" loading="eager" decoding="async" />
+      <span>{businessName}</span>
+    </a>
     <nav class="hidden items-center gap-6 md:flex" aria-label="Hlavni navigace">
       {navItems.map((item) => (
-        <a href={item.href} class="text-sm font-medium text-slate-600 transition hover:text-slate-900">{item.label}</a>
+        <a href={item.href} class="text-[17px] font-medium text-slate-600 transition hover:text-slate-900">{item.label}</a>
       ))}
     </nav>
-    <a href={phoneHref} class="hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 md:inline-flex">{phone}</a>
-    <a href="#kontakt" class="inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 md:hidden">Kontakt</a>
+    <a href={phoneHref} class="hidden rounded-lg border border-slate-300 px-3 py-2 text-[17px] font-semibold text-slate-900 transition hover:bg-slate-100 md:inline-flex">{phone}</a>
+    <a href="#kontakt" class="inline-flex rounded-lg border border-slate-300 px-3 py-2 text-[17px] font-semibold text-slate-900 md:hidden">Kontakt</a>
   </div>
 </header>

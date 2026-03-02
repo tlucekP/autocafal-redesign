@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3E7EB" />
+      <stop offset="1" stop-color="#D5DCE2" />
+    </linearGradient>
+    <linearGradient id="highlight" x1="0" y1="220" x2="1920" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#base)" />
+  <rect y="120" width="1920" height="360" fill="url(#highlight)" />
+
+  <g opacity="0.34" stroke="#6D7781" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M196 690C250 575 370 492 520 492H1070C1216 492 1336 568 1392 678L1495 678C1540 678 1576 714 1576 759V777H1398C1398 860 1329 928 1246 928C1163 928 1096 860 1096 777H762C762 860 695 928 612 928C529 928 462 860 462 777H250C208 777 174 743 174 701V690H196Z" />
+    <circle cx="612" cy="777" r="94" />
+    <circle cx="1246" cy="777" r="94" />
+  </g>
+
+  <g opacity="0.16" stroke="#7B8792" stroke-width="6">
+    <path d="M0 838H1920" />
+    <path d="M0 900H1920" />
+    <path d="M0 962H1920" />
+    <path d="M0 1024H1920" />
+  </g>
+</svg>
